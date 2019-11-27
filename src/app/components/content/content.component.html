@@ -1,0 +1,27 @@
+<form class="weather-input-form" onsubmit="return false">
+  <input
+    name="city"
+    class="weather-input"
+    type="text"
+    placeholder="Type city here..."
+    autocomplete="off"
+    [(ngModel)]="city"
+    [ngClass]="{'input-error': visibleSection === 'error'}">
+
+  <input class="weather-submit"
+         type="submit"
+         (click)="onGetWeather()"
+         value="I wanna know it, too">
+</form>
+
+<app-information
+  class="collapsible"
+  [ngClass]="{'collapsed': visibleSection !== 'info'}"
+  [temperature]="temperature"
+  [imagePath]="imagePath"
+  [description]="description"></app-information>
+
+<app-error
+  class="collapsible"
+  [ngClass]="{'collapsed': visibleSection !== 'error'}"
+  [error]="errorText"></app-error>

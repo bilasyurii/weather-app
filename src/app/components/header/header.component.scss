@@ -1,0 +1,22 @@
+:host {
+  text-align: right;
+}
+
+.weather-title {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.weather-subtitle {
+  font-size: 20px;
+}
+
+@media (orientation: portrait) {
+  .weather-title {
+    font-size: 14vw;
+  }
+
+  .weather-subtitle {
+    font-size: 5vw;
+  }
+}

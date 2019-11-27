@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+}
+
+@media (orientation: portrait) {
+  .weather-submit {
+    font-size: 7vmin;
+  }
+
+  :host {
+    width: 90%;
+  }
+}
