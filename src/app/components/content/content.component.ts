@@ -19,24 +19,26 @@ export class ContentComponent {
 
   constructor(private weatherService: WeatherService) {}
 
-  private capitalize(text: string) {
+  private capitalize(text: string): string {
+    if (text.length === 0) {
+      return '';
+    }
     const letter: string = text[0];
     const restPart: string = text.slice(1);
     return letter.toUpperCase() + restPart;
   }
 
-  private getIcon(code: string) {
+  private getIcon(code: string): string {
     return environment.iconsUrl + code.slice(0, -1) + 'd@2x.png';
   }
 
   onGetWeather() {
-    this.weatherService.onCityChange.next(this.capitalize(this.city));
-
     this.weatherService.getWeather(this.city).subscribe((response: any) => {
       this.temperature = Math.round(response.main.temp) + '&deg;C';
       this.description =  this.capitalize(response.weather[0].description);
       this.imagePath = this.getIcon(response.weather[0].icon);
       this.visibleSection = 'info';
+      this.weatherService.onCityChange.next(this.capitalize(this.city));
     }, error => {
       switch (error.status) {
         case 404:
@@ -48,6 +50,7 @@ export class ContentComponent {
         default:
           this.errorText = 'Unknown error occurred';
       }
+      this.weatherService.onCityChange.next('');
       this.visibleSection = 'error';
     });
   }

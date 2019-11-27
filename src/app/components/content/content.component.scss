@@ -1,32 +1,32 @@
 :host {
   text-align: center;
   align-self: stretch;
-}
 
-.weather-input-form {
-  display: flex;
-  flex-direction: column;
-}
+  .weather-form {
+    display: flex;
+    flex-direction: column;
 
-.weather-input {
-  transition: border 0.3s ease-out;
-  text-align: center;
-  margin-top: 20px;
-}
+    .weather-input {
+      transition: border 0.3s ease-out;
+      text-align: center;
+      margin-top: 20px;
+    }
 
-.weather-submit {
-  cursor: pointer;
-  border: 0;
-  font-size: 3vmin;
-  color: #eee;
-  display: block;
-  margin: 3vmin auto 0;
-  border-radius: 2vmin;
-  background: url("../../../assets/image/search.png") no-repeat #444 scroll 1vmin center;
-  background-size: 5vmin;
-  padding: 2vmin 2vmin 2vmin 7vmin;
-}
+    .weather-submit {
+      cursor: pointer;
+      border: 0;
+      font-size: 3vmin;
+      color: #eee;
+      display: block;
+      margin: 3vmin auto 0;
+      border-radius: 2vmin;
+      background: url("../../../assets/image/search.png") no-repeat #444 scroll 1vmin center;
+      background-size: 5vmin;
+      padding: 2vmin 2vmin 2vmin 7vmin;
+    }
 
-.weather-submit:hover {
-  background-color: #333;
+    .weather-submit:hover {
+      background-color: #333;
+    }
+  }
 }
