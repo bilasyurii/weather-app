@@ -1,6 +1,9 @@
 :host {
   text-align: center;
   align-self: stretch;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
 }
 
 .weather-form {
@@ -29,4 +32,10 @@
 
 .weather-submit:hover {
   background-color: #333;
+}
+
+@media (orientation: portrait) {
+  .weather-submit {
+    font-size: 7vmin;
+  }
 }

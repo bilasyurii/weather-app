@@ -1,7 +1,11 @@
 .weather-content {
-  margin-top: 3vmin;
   font-size: 8vmin;
   padding-bottom: 4vmin;
+  border: 1px solid yellow;
+}
+
+:host {
+  border: 1px solid green;
 }
 
 .weather-icon {
