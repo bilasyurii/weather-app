@@ -1,25 +1,28 @@
 :host {
   text-align: right;
   align-self: center;
+
+  p {
+    color: #fff;
+  }
 }
 
 .weather-title {
-  font-size: 50px;
+  font-size: 12vw;
   font-weight: bold;
-  color: #fff;
 }
 
 .weather-subtitle {
-  font-size: 20px;
-  color: #fff;
+  font-size: 4vw;
 }
 
-@media (orientation: portrait) {
+@media screen and (orientation: landscape) {
   .weather-title {
-    font-size: 10vw;
+    font-size: 6vw;
   }
 
   .weather-subtitle {
-    font-size: 4vw;
+    font-size: 2.5vw;
   }
 }
+

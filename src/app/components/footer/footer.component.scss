@@ -6,8 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  border: 1px solid pink;
+  font-size: 2vw;
 }
 
 .weather-footer-nav {
@@ -31,6 +30,10 @@
 }
 
 @media (orientation: portrait) {
+  :host {
+    font-size: 8vw;
+  }
+
   .weather-footer-nav {
     flex-direction: column;
   }

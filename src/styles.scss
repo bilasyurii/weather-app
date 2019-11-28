@@ -13,14 +13,13 @@ body {
   background-size: cover;
   background-position-y: 40%;
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: center;
   flex-direction: row;
   align-items: stretch;
 }
 
 input {
-  font-size: 4vmin;
   padding: 1vmin;
   border: none;
 }
@@ -44,4 +43,8 @@ input {
   max-height: 0;
   border: 0;
   padding: 0;
+}
+
+.weather-block-margin {
+  margin: 20px 0;
 }

@@ -5,17 +5,10 @@
   width: 60%;
 }
 
-@media (orientation: portrait) {
-  :host {
-    width: 90%;
-  }
-}
-
 .weather-main {
   flex: 1;
   display: flex;
   justify-content: center;
   flex-direction: column;
-
-  border: 1px solid blue;
+  margin: 20px 0;
 }

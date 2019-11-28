@@ -1,7 +1,6 @@
 :host {
   text-align: center;
   align-self: stretch;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
 }
@@ -14,28 +13,36 @@
 .weather-input {
   transition: border 0.3s ease-out;
   text-align: center;
-  margin-top: 20px;
+  font-size: 7vw;
+  margin: 20px 0;
 }
 
 .weather-submit {
   cursor: pointer;
   border: 0;
-  font-size: 3vmin;
+  font-size: 7vw;
   color: #eee;
   display: block;
-  margin: 3vmin auto 0;
+  margin: 0 auto;
   border-radius: 2vmin;
-  background: url("../../../assets/image/search.png") no-repeat #444 scroll 1vmin center;
-  background-size: 5vmin;
-  padding: 2vmin 2vmin 2vmin 7vmin;
+  background: url("../../../assets/image/search.png") no-repeat #444 scroll 5vw center;
+  background-size: 6vw;
+  padding: 2vw 8vw 2vw 15vw;
 }
 
 .weather-submit:hover {
   background-color: #333;
 }
 
-@media (orientation: portrait) {
+@media (orientation: landscape) {
   .weather-submit {
-    font-size: 7vmin;
+    font-size: 3vw;
+    padding: 2vw 2vw 2vw 7vw;
+    background-position-x: 1vw;
+    background-size: 4vw;
+  }
+
+  .weather-input {
+    font-size: 4vw;
   }
 }

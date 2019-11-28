@@ -1,15 +1,10 @@
 .weather-content {
-  font-size: 8vmin;
-  padding-bottom: 4vmin;
-  border: 1px solid yellow;
-}
-
-:host {
-  border: 1px solid green;
+  font-size: 4vw;
 }
 
 .weather-icon {
-  height: 15vmin;
+  height: 15vw;
+  max-height: 100px;
 }
 
 .weather-temperature {
@@ -18,4 +13,15 @@
 
 .weather-description {
   color: #fff;
+  padding: 0 4vw;
+}
+
+@media screen and (orientation: portrait) {
+  .weather-content {
+    font-size: 12vw;
+  }
+
+  .weather-icon {
+    height: 70vw;
+  }
 }

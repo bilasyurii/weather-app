@@ -14,14 +14,17 @@
          value="I wanna know it, too">
 </form>
 
-<app-information
-  class="collapsible"
-  [ngClass]="{'collapsed': visibleSection !== 'info'}"
-  [temperature]="temperature"
-  [imagePath]="imagePath"
-  [description]="description"></app-information>
+<div class="weather-information">
+  <app-information
+    class="collapsible"
+    [ngClass]="visibleSection !== 'info' ? 'collapsed' : 'weather-block-margin'"
+    [temperature]="temperature"
+    [imagePath]="imagePath"
+    [description]="description"></app-information>
 
-<app-error
-  class="collapsible"
-  [ngClass]="{'collapsed': visibleSection !== 'error'}"
-  [error]="errorText"></app-error>
+  <app-error
+    class="collapsible"
+    [ngClass]="visibleSection !== 'error' ? 'collapsed' : 'weather-block-margin'"
+    [error]="errorText"></app-error>
+<!--  [ngClass]="{'collapsed': visibleSection !== 'error'}"-->
+</div>
