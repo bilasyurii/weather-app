@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 2vw;
+  font-size: 4vh;
 }
 
 .weather-footer-nav {
@@ -17,16 +17,21 @@
 .weather-nav-link {
   text-align: center;
   text-decoration: none;
-  padding: 10px 25px;
+  padding: 1.8vh 25px;
 }
 
 .weather-nav-link:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.weather-nav-link:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
 .footer-city {
   text-align: center;
-  padding: 10px 25px;
+  padding: 1.8vh 25px;
 }
 
 @media (orientation: portrait) {
