@@ -12,6 +12,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import {WeatherService} from './services/weather.service';
 import {FormsModule} from '@angular/forms';
+import { MainPageComponent } from './components/main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {FormsModule} from '@angular/forms';
     ContentComponent,
     FooterComponent,
     InformationComponent,
-    ErrorComponent
+    ErrorComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
