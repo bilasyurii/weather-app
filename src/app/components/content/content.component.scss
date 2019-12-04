@@ -15,10 +15,7 @@
   font-size: 7vw;
   margin: 5vh 0;
   border-radius: 100vw;
-}
-
-input:focus {
-  outline: none;
+  padding: 1vh;
 }
 
 .weather-submit {
@@ -34,11 +31,7 @@ input:focus {
   padding: 2vw 8vw 2vw 15vw;
 }
 
-.weather-submit:hover {
-  background-color: #333;
-}
-
-.weather-submit:focus {
+.weather-submit:hover, .weather-submit:focus {
   background-color: #333;
 }
 
@@ -52,5 +45,6 @@ input:focus {
 
   .weather-input {
     font-size: 4vh;
+    padding: 1vw;
   }
 }

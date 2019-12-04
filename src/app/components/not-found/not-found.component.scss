@@ -1,0 +1,38 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+* {
+  color: white;
+  text-align: center;
+}
+
+.error-block {
+  margin: 5vh auto;
+}
+
+.error-code {
+  font-size: 12vh;
+}
+
+.error-description {
+  margin-top: 1vh;
+  font-size: 6vh;
+}
+
+.return-back-btn {
+  font-size: 4.3vh;
+  border: 0;
+  color: #eee;
+  display: block;
+  margin: 0 auto;
+  border-radius: 100vw;
+  background-color: #444;
+  padding: 2vh 5vh 2vh 5vh;
+}
+
+.return-back-btn:hover, .return-back-btn:focus {
+  background-color: #333;
+}

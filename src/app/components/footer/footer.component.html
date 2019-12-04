@@ -2,7 +2,7 @@
   <span
     class="footer-city"
     *ngIf="city.length > 0">{{ city }}</span>
-  <a href="#" class="weather-nav-link"><span class="weather-nav-item">Home</span></a>
-  <a href="#" class="weather-nav-link"><span class="weather-nav-item">Contacts</span></a>
-  <a href="#" class="weather-nav-link"><span class="weather-nav-item">About</span></a>
+  <a routerLink="/" class="weather-nav-link"><span class="weather-nav-item">Home</span></a>
+  <a routerLink="/weather" class="weather-nav-link"><span class="weather-nav-item">Weather</span></a>
+  <a routerLink="/contacts" class="weather-nav-link"><span class="weather-nav-item">Contacts</span></a>
 </nav>
