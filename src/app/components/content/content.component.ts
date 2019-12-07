@@ -1,7 +1,7 @@
 import { AlphabeticOnlyValidator } from './../../validators/alphabeticOnly.validator';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import {environment} from '../../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 import { WeatherService } from '../../services/weather.service';
 import { WeatherInfo } from 'src/app/interfaces/weatherInfo.interface';

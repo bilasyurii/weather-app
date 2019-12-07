@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { ContentComponent } from './components/content/content.component';
 
-
 const routes: Routes = [
   { path: 'weather', component: ContentComponent },
   { path: '', component: MainPageComponent },
