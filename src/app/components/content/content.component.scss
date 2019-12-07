@@ -10,12 +10,17 @@
   flex-direction: column;
 }
 
-.weather-input {
+.city-input {
   text-align: center;
   font-size: 7vw;
-  margin: 5vh 0;
   border-radius: 100vw;
-  padding: 1vh;
+  padding: 1vw;
+}
+
+.city-input-block {
+  margin: 5vh 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .weather-submit {
@@ -35,6 +40,12 @@
   background-color: #333;
 }
 
+.error-hint span {
+  color:red;
+  font-size: 4vw;
+  margin-top: 1vh;
+}
+
 @media (orientation: landscape) {
   .weather-submit {
     font-size: 4.3vh;
@@ -43,8 +54,12 @@
     background-size: 6vh;
   }
 
-  .weather-input {
+  .city-input {
     font-size: 4vh;
-    padding: 1vw;
+    padding: 1vh;
+  }
+
+  .error-hint span {
+    font-size: 3vh;
   }
 }

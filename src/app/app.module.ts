@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-
-import {FormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ContentComponent } from './components/content/content.component';
@@ -13,8 +13,8 @@ import { InformationComponent } from './components/content/information/informati
 import { FooterComponent } from './components/footer/footer.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-
 import {WeatherService} from './services/weather.service';
+import { FirstCapitalPipe } from './pipes/firstCapital.pipe';
 
 
 @NgModule({
@@ -26,13 +26,15 @@ import {WeatherService} from './services/weather.service';
     MainPageComponent,
     InformationComponent,
     ErrorComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FirstCapitalPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [HttpClient, WeatherService],
   bootstrap: [AppComponent]

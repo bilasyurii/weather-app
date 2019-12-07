@@ -1,7 +1,7 @@
 <div class="weather-content">
-  <img class="weather-icon" src="{{imagePath}}"/>
+  <img class="weather-icon" src="{{weather.imagePath}}"/>
 
-  <p class="weather-temperature" [innerHTML]="temperature"></p>
+  <p class="weather-temperature">{{weather.temperature}}&deg;C</p>
 
-  <div class="weather-description">{{description}}</div>
+  <div class="weather-description">{{weather.description | firstCapital}}</div>
 </div>

@@ -1,30 +1,42 @@
-<form class="weather-form" onsubmit="return false">
-  <input
-    name="city"
-    class="weather-input"
-    type="text"
-    placeholder="Type city here..."
-    autocomplete="off"
-    [(ngModel)]="city"
-    [ngClass]="{'input-error': visibleSection === 'error'}">
+<form 
+  class="weather-form" 
+  [formGroup]="cityInputForm"
+  (ngSubmit)="onGetWeather()">
+  <div class="city-input-block">
+    <input
+      name="city"
+      formControlName="city"
+      class="city-input"
+      type="text"
+      placeholder="Type city here..."
+      autocomplete="off"
+      [ngClass]="{'input-error': visibleSection === 'error'}"/>
+    
+    <span 
+      class="error-hint" 
+      *ngIf="!cityInputForm.get('city').valid && cityInputForm.get('city').touched">
+      <span *ngIf="cityInputForm.get('city').errors['alphabeticOnly']">
+        Please enter only letters or spaces
+      </span>
+      <span *ngIf="cityInputForm.get('city').errors['required']">
+        Please specify a city
+      </span>
+    </span>
+  </div>
 
-  <input class="weather-submit"
-         type="submit"
-         (click)="onGetWeather()"
-         value="I wanna know it, too">
+  <button class="weather-submit" type="submit">
+    I wanna know it, too
+  </button>
 </form>
 
 <div class="weather-information">
   <app-information
     class="collapsible"
     [ngClass]="visibleSection !== 'info' ? 'collapsed' : 'weather-block-margin'"
-    [temperature]="temperature"
-    [imagePath]="imagePath"
-    [description]="description"></app-information>
+    [weather]="weather"></app-information>
 
   <app-error
     class="collapsible"
     [ngClass]="visibleSection !== 'error' ? 'collapsed' : 'weather-block-margin'"
     [error]="errorText"></app-error>
-<!--  [ngClass]="{'collapsed': visibleSection !== 'error'}"-->
 </div>

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { WeatherInfo } from 'src/app/interfaces/weatherInfo.interface';
 
 
 @Component({
@@ -7,7 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./information.component.scss']
 })
 export class InformationComponent {
-  @Input() temperature: string;
-  @Input() description: string;
-  @Input() imagePath: string;
+  @Input() weather: WeatherInfo;
 }

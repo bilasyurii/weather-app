@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { AlphabeticOnlyValidator } from './../../validators/alphabeticOnly.validator';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {environment} from '../../../environments/environment';
 
 import { WeatherService } from '../../services/weather.service';
-import {environment} from '../../../environments/environment';
+import { WeatherInfo } from 'src/app/interfaces/weatherInfo.interface';
 
 
 @Component({
@@ -9,49 +12,53 @@ import {environment} from '../../../environments/environment';
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.scss']
 })
-export class ContentComponent {
-  city = '';
-  temperature = '';
-  description = '';
-  imagePath = '';
+export class ContentComponent implements OnInit, OnDestroy {
+  weather: WeatherInfo = {temperature: 0, description: '', imagePath: ''};
   errorText = '';
   visibleSection = 'none';
+  cityInputForm: FormGroup;
 
   constructor(private weatherService: WeatherService) {}
 
-  private capitalize(text: string): string {
-    if (text.length === 0) {
-      return '';
-    }
-    const letter: string = text[0];
-    const restPart: string = text.slice(1);
-    return letter.toUpperCase() + restPart;
+  ngOnInit() {
+    this.cityInputForm = new FormGroup({
+      city: new FormControl(null, [Validators.required, AlphabeticOnlyValidator.Validate])
+    });
+  }
+
+  ngOnDestroy() {
+    this.weatherService.onCityChange.next('');
   }
 
   private getIcon(code: string): string {
     return environment.iconsUrl + code.slice(0, -1) + 'd@2x.png';
   }
 
+  private processError(text: string) {
+    this.errorText = text;
+    this.weatherService.onCityChange.next('');
+    this.visibleSection = 'error';
+  }
+
   onGetWeather() {
-    this.weatherService.getWeather(this.city).subscribe((response: any) => {
-      this.temperature = Math.round(response.main.temp) + '&deg;C';
-      this.description =  this.capitalize(response.weather[0].description);
-      this.imagePath = this.getIcon(response.weather[0].icon);
+    if (!this.cityInputForm.valid) {
+      return;
+    }
+    const city: string = this.cityInputForm.get('city').value;
+    this.weatherService.getWeather(city).subscribe((response: any) => {
+      this.weather = {
+        temperature: Math.round(response.main.temp),
+        description: response.weather[0].description,
+        imagePath: this.getIcon(response.weather[0].icon)
+      };
       this.visibleSection = 'info';
-      this.weatherService.onCityChange.next(this.capitalize(this.city));
+      this.weatherService.onCityChange.next(city);
     }, error => {
-      switch (error.status) {
-        case 404:
-          this.errorText = 'Wrong city was specified';
-          break;
-        case 400:
-          this.errorText = 'No city was specified';
-          break;
-        default:
-          this.errorText = 'Unknown error occurred';
+      if (error.status === 404) {
+        this.processError('Wrong city was specified');
+      } else {
+        this.processError('Unknown error occurred');
       }
-      this.weatherService.onCityChange.next('');
-      this.visibleSection = 'error';
     });
   }
 }
