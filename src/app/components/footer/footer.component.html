@@ -1,8 +1,30 @@
 <nav class="weather-footer-nav">
   <span
     class="footer-city"
-    *ngIf="city.length > 0">{{ city | firstCapital }}</span>
-  <a routerLink="/" class="weather-nav-link"><span class="weather-nav-item">Home</span></a>
-  <a routerLink="/weather" class="weather-nav-link"><span class="weather-nav-item">Weather</span></a>
-  <a routerLink="/contacts" class="weather-nav-link"><span class="weather-nav-item">Contacts</span></a>
+    *ngIf="city.length > 0">
+    <hr class="city-hr">
+    {{ city | firstCapital }}
+  </span>
+
+  <a 
+    routerLink="/" 
+    class="weather-nav-link" 
+    routerLinkActive="active-nav-link"
+    [routerLinkActiveOptions]="{exact: true}">
+    <span class="weather-nav-item">Home</span>
+  </a>
+  <a 
+    routerLink="/weather" 
+    class="weather-nav-link" 
+    routerLinkActive="active-nav-link"
+    [routerLinkActiveOptions]="{exact: true}">
+    <span class="weather-nav-item">Weather</span>
+  </a>
+  <a 
+    routerLink="/contacts" 
+    class="weather-nav-link" 
+    routerLinkActive="active-nav-link"
+    [routerLinkActiveOptions]="{exact: true}">
+    <span class="weather-nav-item">Contacts</span>
+  </a>
 </nav>

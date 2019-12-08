@@ -1,26 +1,22 @@
-* {
-  color: #fff;
-}
-
 :host {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 4vh;
 }
 
 .weather-footer-nav {
   display: flex;
   justify-content: space-between;
+  font-size: 2.5em;
 }
 
 .weather-nav-link {
   text-align: center;
   text-decoration: none;
-  padding: 1.8vh 25px;
+  padding: 0.3em 0.4em;
 }
 
-.weather-nav-link:hover {
+.weather-nav-link:hover, .active-nav-link {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -31,15 +27,24 @@
 
 .footer-city {
   text-align: center;
-  padding: 1.8vh 25px;
+  padding: 0.3em 0.4em;
 }
 
-@media (orientation: portrait) {
-  :host {
-    font-size: 8vw;
-  }
+.city-hr {
+  margin-bottom: 0.5em;
+  display: none;
+}
 
+@media (orientation: portrait), (min-aspect-ratio: 2/1) and (max-height: 360px) {
   .weather-footer-nav {
     flex-direction: column;
+  }
+
+  .footer-city {
+    order: 1;
+  }
+
+  .city-hr {
+    display: block;
   }
 }

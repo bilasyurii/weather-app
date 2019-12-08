@@ -12,23 +12,22 @@
 
 .city-input {
   text-align: center;
-  font-size: 7vw;
+  font-size: 2.5em;
   border-radius: 100vw;
-  padding: 1vw;
+  padding: 0.2em 0;
 }
 
 .city-input-block {
-  margin: 5vh 0;
+  margin: 2em 0;
   display: flex;
   flex-direction: column;
 }
 
 .weather-submit {
-  font-size: 7vw;
-  margin: 0 auto;
-  background: url("../../../assets/image/search.png") no-repeat #444 scroll 5vw center;
-  background-size: 6vw;
-  padding: 2vw 8vw 2vw 15vw;
+  font-size: 2.5em;
+  background: url("../../../assets/image/search.png") no-repeat #444 scroll 0.4em center;
+  background-size: 1em;
+  padding: 0.4em 0.8em 0.4em 1.8em;
 }
 
 .weather-submit:hover, .weather-submit:focus {
@@ -39,26 +38,8 @@
   background-color: #666;
 }
 
-.error-hint span {
-  color:red;
-  font-size: 4vw;
-  margin-top: 1vh;
-}
-
-@media (orientation: landscape) {
-  .weather-submit {
-    font-size: 4.3vh;
-    padding: 2vh 5vh 2vh 12vh;
-    background-position-x: 2vh;
-    background-size: 6vh;
-  }
-
-  .city-input {
-    font-size: 4vh;
-    padding: 1vh;
-  }
-
-  .error-hint span {
-    font-size: 3vh;
-  }
+.error-hint {
+  color: #ff7373;
+  font-size: 1.8em;
+  margin-top: 0.5em;
 }

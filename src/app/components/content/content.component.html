@@ -15,9 +15,11 @@
     <span 
       class="error-hint" 
       *ngIf="!cityInputForm.get('city').valid && cityInputForm.get('city').touched">
+
       <span *ngIf="cityInputForm.get('city').errors['alphabeticOnly']">
         Please enter only letters or spaces
       </span>
+      
       <span *ngIf="cityInputForm.get('city').errors['required']">
         Please specify a city
       </span>

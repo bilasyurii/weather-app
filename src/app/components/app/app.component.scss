@@ -9,5 +9,37 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 3vh 0;
+  margin: 1em 0;
+}
+
+.invisible-right-margined {
+  visibility: hidden;
+  margin-left: auto;
+}
+
+@media (min-aspect-ratio: 2/1) and (max-height: 360px) {
+  .weather-main {
+    flex: initial;
+    margin: 10px;
+  }
+
+  .footer-wrapper {
+    margin-right: auto;
+    margin-left: 10px;
+    display: flex;
+    width: 17em;
+    height: 100%;
+  }
+
+  .weather-footer {
+    position: fixed;
+    top: 100px;
+  }
+
+  :host {
+    font-size: 0.75em;
+    width: 100vw;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
 }

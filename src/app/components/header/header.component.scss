@@ -8,20 +8,10 @@
 }
 
 .weather-title {
-  font-size: 12vw;
+  font-size: 4.5em;
   font-weight: bold;
 }
 
 .weather-subtitle {
-  font-size: 4vw;
-}
-
-@media screen and (orientation: landscape) {
-  .weather-title {
-    font-size: 12vh;
-  }
-
-  .weather-subtitle {
-    font-size: 4vh;
-  }
+  font-size: 1.8em;
 }

@@ -1,10 +1,9 @@
 .weather-content {
-  font-size: 5vh;
+  font-size: 2.5em;
 }
 
 .weather-icon {
-  height: 15vh;
-  max-height: 100px;
+  height: 4em;
 }
 
 .weather-temperature {
@@ -13,16 +12,6 @@
 
 .weather-description {
   color: #fff;
-  padding: 0 4vh;
-  margin-bottom: 2.5vh;
-}
-
-@media screen and (orientation: portrait) {
-  .weather-content {
-    font-size: 12vw;
-  }
-
-  .weather-icon {
-    height: 70vw;
-  }
+  padding: 0 2em;
+  margin-bottom: 0.7em;
 }

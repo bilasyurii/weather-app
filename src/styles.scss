@@ -1,15 +1,14 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Public Sans', sans-serif;
-  color: #222;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
   background: url("assets/image/bg.jpg") no-repeat fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   background-position-y: 40%;
   display: flex;
@@ -17,6 +16,27 @@ body {
   justify-content: center;
   flex-direction: row;
   align-items: stretch;
+  font-size: 1em;
+  font-family: 'Public Sans', sans-serif;
+  color: white;
+}
+
+@media (min-width: 500px) {
+  body {
+    font-size: 1.3em;
+  }
+}
+
+@media (min-width: 1500px) {
+  body {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 2500px) {
+  body {
+    font-size: 3em;
+  }
 }
 
 input {
@@ -31,14 +51,18 @@ input:focus, button:focus {
   border: 3px solid red;
 }
 
+a {
+  color: white;
+}
+
 .collapsible {
   background: rgba(255, 255, 255, 0.25);
-  border-radius: 5vmin;
+  border-radius: 2em;
   overflow: hidden;
   transition: all 0.3s ease-out;
   transition-property: max-height, border, padding;
   max-height: 100vh;
-  border: 0.5vh solid #fff;
+  border: 3px solid white;
   display: block;
 }
 
@@ -49,7 +73,7 @@ input:focus, button:focus {
 }
 
 .weather-block-margin {
-  margin-top: 5vh;
+  margin-top: 2em;
 }
 
 button {
