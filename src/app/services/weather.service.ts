@@ -1,15 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subscriber } from 'rxjs';
+import { Subject } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 
 @Injectable()
 export class WeatherService {
-  onCityChange: Subscriber<string>;
-  cityChange: Observable<string> = new Observable<string>(observer => {
-    this.onCityChange = observer;
-  });
+  cityChange: Subject<string> = new Subject();
 
   constructor(private httpClient: HttpClient) {}
 

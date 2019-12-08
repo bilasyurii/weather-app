@@ -24,7 +24,10 @@
     </span>
   </div>
 
-  <button class="weather-submit" type="submit">
+  <button 
+    class="weather-submit" 
+    type="submit" 
+    [disabled]="!cityInputForm.valid">
     I wanna know it, too
   </button>
 </form>

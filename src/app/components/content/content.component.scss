@@ -24,13 +24,8 @@
 }
 
 .weather-submit {
-  cursor: pointer;
-  border: 0;
   font-size: 7vw;
-  color: #eee;
-  display: block;
   margin: 0 auto;
-  border-radius: 100vw;
   background: url("../../../assets/image/search.png") no-repeat #444 scroll 5vw center;
   background-size: 6vw;
   padding: 2vw 8vw 2vw 15vw;
@@ -38,6 +33,10 @@
 
 .weather-submit:hover, .weather-submit:focus {
   background-color: #333;
+}
+
+.weather-submit:disabled {
+  background-color: #666;
 }
 
 .error-hint span {

@@ -23,11 +23,6 @@ input {
   border: none;
 }
 
-button {
-  cursor: pointer;
-  border: none;
-}
-
 input:focus, button:focus {
   outline: none;
 }
@@ -55,4 +50,24 @@ input:focus, button:focus {
 
 .weather-block-margin {
   margin-top: 5vh;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  display: block;
+  border-radius: 100vw;
+  background-color: #444;
+  color: #eee;
+}
+
+button:hover, button:focus {
+  background-color: #333;
+  color: white;
+}
+
+button:disabled {
+  cursor: default;
+  background-color: #666;
+  color: #999;
 }

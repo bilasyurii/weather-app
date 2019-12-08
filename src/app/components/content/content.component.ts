@@ -21,22 +21,26 @@ export class ContentComponent implements OnInit, OnDestroy {
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit() {
-    this.cityInputForm = new FormGroup({
-      city: new FormControl(null, [Validators.required, AlphabeticOnlyValidator.Validate])
-    });
+    this.createForm();
   }
 
   ngOnDestroy() {
-    this.weatherService.onCityChange.next('');
+    this.weatherService.cityChange.next('');
   }
 
   private getIcon(code: string): string {
     return environment.iconsUrl + code.slice(0, -1) + 'd@2x.png';
   }
 
+  private createForm() {
+    this.cityInputForm = new FormGroup({
+      city: new FormControl(null, [Validators.required, AlphabeticOnlyValidator.Validate])
+    });
+  }
+
   private processError(text: string) {
     this.errorText = text;
-    this.weatherService.onCityChange.next('');
+    this.weatherService.cityChange.next('');
     this.visibleSection = 'error';
   }
 
@@ -52,7 +56,7 @@ export class ContentComponent implements OnInit, OnDestroy {
         imagePath: this.getIcon(response.weather[0].icon)
       };
       this.visibleSection = 'info';
-      this.weatherService.onCityChange.next(city);
+      this.weatherService.cityChange.next(city);
     }, error => {
       if (error.status === 404) {
         this.processError('Wrong city was specified');

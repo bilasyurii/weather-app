@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import {WeatherService} from '../../services/weather.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -9,6 +10,8 @@ import {WeatherService} from '../../services/weather.service';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit, OnDestroy {
+  private citySubscription: Subscription;
+
   city = '';
 
   constructor(private weatherService: WeatherService) {}
@@ -18,11 +21,11 @@ export class FooterComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.weatherService.onCityChange.unsubscribe();
+    this.citySubscription.unsubscribe();
   }
 
   private subscribeToCityChanges() {
-    this.weatherService.cityChange.subscribe(newCity => {
+    this.citySubscription = this.weatherService.cityChange.subscribe(newCity => {
       this.city = newCity;
     });
   }
